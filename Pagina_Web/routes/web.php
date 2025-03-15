@@ -13,6 +13,11 @@ Route::get('/reservas/create', \App\Livewire\Reservas\Create::class)->name('rese
 Route::get('/reservas/show/{reserva}', \App\Livewire\Reservas\Show::class)->name('reservas.show');
 Route::get('/reservas/update/{reserva}', \App\Livewire\Reservas\Edit::class)->name('reservas.edit');
 
+Route::get('/users', \App\Livewire\Users\Index::class)->name('users.index');
+Route::get('/users/create', \App\Livewire\Users\Create::class)->name('users.create');
+Route::get('/users/show/{user}', \App\Livewire\Users\Show::class)->name('users.show');
+Route::get('/users/update/{user}', \App\Livewire\Users\Edit::class)->name('users.edit');
+
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
