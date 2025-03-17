@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ServicioController;
 use App\Http\Controllers\ReservaController;
 use App\Http\Middleware\RoleMiddleware;
+use Illuminate\Support\Facades\Auth;
+
 
 
 Route::middleware(['auth', RoleMiddleware::class])->group(function () {
