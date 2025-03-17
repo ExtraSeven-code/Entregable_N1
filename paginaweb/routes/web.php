@@ -3,6 +3,12 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ServicioController;
 use App\Http\Controllers\ReservaController;
+use App\Http\Middleware\RoleMiddleware;
+
+
+Route::middleware(['auth', 'role:admin'])->group(function () {
+    Route::resource('servicios', ServicioController::class);
+});
 
 Route::get('/', function () {
     return view('welcome');
@@ -11,5 +17,4 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::resource('servicios', ServicioController::class);
 Route::resource('reservas', ReservaController::class);
