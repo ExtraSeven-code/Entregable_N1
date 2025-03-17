@@ -22,11 +22,11 @@
                         
                                 <div class="form-group mb-2 mb20">
                                     <strong>User Id:</strong>
-                                    {{ $reserva->user_id }}
+                                    {{ $reserva->user_id }} - {{ $reserva->user->name }}
                                 </div>
                                 <div class="form-group mb-2 mb20">
                                     <strong>Servicio Id:</strong>
-                                    {{ $reserva->servicio_id }}
+                                    {{ $reserva->servicio_id }} - {{ $reserva->servicio->servicio }}
                                 </div>
 
                     </div>

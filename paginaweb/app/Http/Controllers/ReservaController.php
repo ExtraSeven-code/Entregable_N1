@@ -63,8 +63,10 @@ class ReservaController extends Controller
     public function edit($id): View
     {
         $reserva = Reserva::find($id);
+        $servicios = Servicio::pluck('servicio','id');
+        $usuarios = User::pluck('name','id');
 
-        return view('reserva.edit', compact('reserva'));
+        return view('reserva.edit', compact('reserva','servicios','usuarios'));
     }
 
     /**
