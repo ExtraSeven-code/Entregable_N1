@@ -36,8 +36,8 @@
                                     <tr>
                                         <th>No</th>
                                         
-									<th >User Id</th>
-									<th >Servicio Id</th>
+									<th >cliente</th>
+									<th >Servicio contratado</th>
 
                                         <th></th>
                                     </tr>
@@ -47,8 +47,8 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-										<td >{{ $reserva->user_id }}</td>
-										<td >{{ $reserva->servicio_id }}</td>
+										<td >{{ $reserva->user->name }}</td>
+										<td >{{ $reserva->servicio->servicio }}</td>
 
                                             <td>
                                                 <form action="{{ route('reservas.destroy', $reserva->id) }}" method="POST">

@@ -6,6 +6,8 @@ use App\Models\Reserva;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Http\Requests\ReservaRequest;
+use App\Models\Servicio;
+use App\Models\User;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 
@@ -28,8 +30,10 @@ class ReservaController extends Controller
     public function create(): View
     {
         $reserva = new Reserva();
+        $servicios = Servicio::pluck('servicio','id');
+        $usuarios = User::pluck('name','id');
 
-        return view('reserva.create', compact('reserva'));
+        return view('reserva.create', compact('reserva','servicios','usuarios'));
     }
 
     /**
