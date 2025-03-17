@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('servicio');
             $table->string('desccripcion');
-            $table->string('costo');
-            $table->string('fecha');
+            $table->decimal('costo',8,2);
+            $table->time('fecha');
             $table->timestamps();
         });
     }
