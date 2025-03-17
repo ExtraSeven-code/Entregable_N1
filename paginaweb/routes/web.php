@@ -6,7 +6,7 @@ use App\Http\Controllers\ReservaController;
 use App\Http\Middleware\RoleMiddleware;
 
 
-Route::middleware(['auth', 'role:admin'])->group(function () {
+Route::middleware(['auth', RoleMiddleware::class])->group(function () {
     Route::resource('servicios', ServicioController::class);
 });
 

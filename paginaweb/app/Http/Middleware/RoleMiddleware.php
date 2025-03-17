@@ -10,10 +10,11 @@ use Illuminate\Support\Facades\Auth;
 class RoleMiddleware
 
 {
-    public function handle(Request $request, Closure $next, string $role): Response
+    public function handle(Request $request, Closure $next): Response
     {
-        if (!Auth::check() || Auth::user()->role !== $role) {
-            abort(403, 'Acceso denegado');
+
+        if (!Auth::check() || Auth::user()->role !== 'admin') {
+            abort(403, 'No tienes permiso para acceder.');
         }
 
         return $next($request);
